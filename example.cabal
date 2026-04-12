@@ -1,0 +1,51 @@
+cabal-version: 3.8
+name: example
+version: 0.1.0.0
+build-type: Simple
+
+executable example
+  build-depends: base
+               , aeson
+               , containers
+               , lens
+               , lens-aeson
+               , mtl
+               , text
+               , pandoc
+  default-language: GHC2024
+  hs-source-dirs: src
+  main-is: Main.hs
+  default-extensions:
+    BlockArguments
+    DeriveAnyClass
+    DeriveGeneric
+    DeriveLift
+    DuplicateRecordFields
+    GeneralizedNewtypeDeriving
+    MultiWayIf
+    NegativeLiterals
+    NoImplicitPrelude
+    OverloadedRecordDot
+    OverloadedStrings
+    RecordWildCards
+    StrictData
+    TypeFamilies
+    ViewPatterns
+  ghc-options:
+    -threaded
+    -rtsopts
+    -O2
+    -Weverything
+    -Wno-all-missed-specialisations
+    -Wno-missed-specialisations
+    -Wno-missing-export-lists
+    -Wno-missing-import-lists
+    -Wno-missing-kind-signatures
+    -Wno-missing-local-signatures
+    -Wno-missing-role-annotations
+    -Wno-missing-safe-haskell-mode
+    -Wno-type-defaults
+    -Wno-monomorphism-restriction
+    -Wno-unsafe
+    -fwrite-ide-info
+    -hiedir .hiefiles

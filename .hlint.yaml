@@ -1,0 +1,11 @@
+- arguments:
+  - -XOverloadedRecordDot
+
+- ignore: {name: "Use <$>"}
+- ignore: {name: "Use &&"}
+- ignore: {name: "Use ||"}
+- ignore: {name: "Use ++"}
+- ignore: {name: "Use second"}
+- ignore: {name: "Parenthesize unary negation"}
+- ignore: {name: "Use list comprehension"}
+- ignore: {name: "Use newtype instead of data"}

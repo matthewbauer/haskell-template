@@ -1,12 +1,28 @@
 {
   "nodes": {
+    "http2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1766983985,
+        "narHash": "sha256-DlbrRrzc4RVtru1rd/TzARwrq7iP+oKp3biLJ/cVDKM=",
+        "owner": "kazu-yamamoto",
+        "repo": "http2",
+        "rev": "47b38d72b4c09ab8b55ac55824ae6cadbded5ab7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kazu-yamamoto",
+        "repo": "http2",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1774794121,
-        "narHash": "sha256-gih24b728CK8twDNU7VX9vVYK2tLEXvy9gm/GKq2VeE=",
+        "lastModified": 1775888245,
+        "narHash": "sha256-nwASzrRDD1JBEu/o8ekKYEXm/oJW6EMCzCRdrwcLe90=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c397ef6af68c018462d786e1b65384abc472a907",
+        "rev": "13043924aaa7375ce482ebe2494338e058282925",
         "type": "github"
       },
       "original": {
@@ -16,6 +32,7 @@
     },
     "root": {
       "inputs": {
+        "http2": "http2",
         "nixpkgs": "nixpkgs"
       }
     }

@@ -1,0 +1,15 @@
+dist
+dist-*
+.direnv/
+result*
+*.hp
+*.prof
+*.ps
+*.svg
+*.aux
+*.stg
+*.eventlog
+*.eventlog.html
+cabal.project.local
+.hiefiles/
+.hiedb
