@@ -3,18 +3,8 @@ name: example
 version: 0.1.0.0
 build-type: Simple
 
-executable example
-  build-depends: base
-               , aeson
-               , containers
-               , lens
-               , lens-aeson
-               , mtl
-               , text
-               , pandoc
+common defaults
   default-language: GHC2024
-  hs-source-dirs: src
-  main-is: Main.hs
   default-extensions:
     BlockArguments
     DeriveAnyClass
@@ -27,14 +17,12 @@ executable example
     NoImplicitPrelude
     OverloadedRecordDot
     OverloadedStrings
+    RankNTypes
     RecordWildCards
     StrictData
     TypeFamilies
     ViewPatterns
   ghc-options:
-    -threaded
-    -rtsopts
-    -O2
     -Weverything
     -Wno-all-missed-specialisations
     -Wno-missed-specialisations
@@ -49,3 +37,19 @@ executable example
     -Wno-unsafe
     -fwrite-ide-info
     -hiedir .hiefiles
+    -O2
+
+executable example
+  build-depends: base
+               , aeson
+               , containers
+               , lens
+               , lens-aeson
+               , mtl
+               , text
+               , pandoc
+  hs-source-dirs: src
+  main-is: Main.hs
+  ghc-options:
+    -threaded
+    -rtsopts
