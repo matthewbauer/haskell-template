@@ -48,6 +48,7 @@ executable example
                , mtl
                , text
                , pandoc
+  import: defaults
   hs-source-dirs: src
   main-is: Main.hs
   ghc-options:
