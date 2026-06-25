@@ -35,6 +35,7 @@ common defaults
     -Wno-type-defaults
     -Wno-monomorphism-restriction
     -Wno-unsafe
+    -Wno-unused-packages
     -fwrite-ide-info
     -hiedir .hiefiles
     -O2
@@ -43,12 +44,26 @@ executable example
   import: defaults
   build-depends: base
                , aeson
+               , array
+               , binary
+               , bytestring
                , containers
+               , directory
+               , filepath
                , lens
                , lens-aeson
                , mtl
-               , text
+               , mtl
                , pandoc
+               , process
+               , random
+               , stm
+               , template-haskell
+               , text
+               , text
+               , transformers
+               , unix
+               , vector
   hs-source-dirs: src
   main-is: Main.hs
   ghc-options:

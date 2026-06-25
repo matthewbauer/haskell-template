@@ -1,5 +1,6 @@
-{ mkDerivation, aeson, base, containers, lens, lens-aeson, lib, mtl
-, pandoc, text
+{ mkDerivation, aeson, array, base, binary, bytestring, containers
+, directory, filepath, lens, lens-aeson, lib, mtl, pandoc, process
+, random, stm, template-haskell, text, transformers, unix, vector
 }:
 mkDerivation {
   pname = "example";
@@ -8,7 +9,9 @@ mkDerivation {
   isLibrary = false;
   isExecutable = true;
   executableHaskellDepends = [
-    aeson base containers lens lens-aeson mtl pandoc text
+    aeson array base binary bytestring containers directory filepath
+    lens lens-aeson mtl pandoc process random stm template-haskell text
+    transformers unix vector
   ];
   license = "unknown";
   mainProgram = "example";
