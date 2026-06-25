@@ -40,6 +40,7 @@ common defaults
     -O2
 
 executable example
+  import: defaults
   build-depends: base
                , aeson
                , containers
@@ -48,7 +49,6 @@ executable example
                , mtl
                , text
                , pandoc
-  import: defaults
   hs-source-dirs: src
   main-is: Main.hs
   ghc-options:
