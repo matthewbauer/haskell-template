@@ -21,7 +21,7 @@
     };
 
     forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
-    nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; overlays = [ self.overlays.default ]; });
+    nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; overlays = [ self.overlays.localHaskellPackagesOverlay self.overlays.default ]; });
     nixpkgsForNoOverlay = forAllSystems (system: import nixpkgs { inherit system; });
   in {
     packages = forAllSystems (system: {
@@ -102,7 +102,7 @@
       # Add more checks as needed
     });
 
-    overlays.default = final: prev: {
+    overlays.localHaskellPackagesOverlay = final: prev: {
       haskell = prev.haskell // {
         packages = prev.haskell.packages // {
           ${compiler} = prev.haskell.packages.${compiler}.extend (hfinal: hprev:
@@ -114,6 +114,17 @@
         };
       };
     };
+
+    overlays.default = final: prev: {
+      haskell = prev.haskell // {
+        packages = prev.haskell.packages // {
+          ${compiler} = prev.haskell.packages.${compiler}.extend (hfinal: hprev: {
+            # my overlay here
+          });
+        };
+      };
+    };
+
   };
 
   nixConfig.bash-prompt = "\\n\\[\\e[1;32m\\][example:\\w]\\$\\[\\e[0m\\] ";
