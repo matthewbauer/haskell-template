@@ -21,7 +21,10 @@
     };
 
     forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
-    nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; overlays = [ self.overlays.localHaskellPackagesOverlay self.overlays.default ]; });
+    nixpkgsFor = forAllSystems (system: import nixpkgs {
+      inherit system;
+      overlays = [ self.overlays.localHaskellPackagesOverlay self.overlays.default ];
+    });
     nixpkgsForNoOverlay = forAllSystems (system: import nixpkgs { inherit system; });
   in {
     packages = forAllSystems (system: {
